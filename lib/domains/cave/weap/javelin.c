@@ -12,8 +12,9 @@ protected void create() {
     SetShort("a javelin");
     SetLong("This is a small, light throwing spear.");
     SetMass(50);
+    SetBaseCost("silver",20);
     SetVendorType(VT_WEAPON);
-    SetClass(30);
+    SetClass(5);
     SetDamageType(PIERCE);
     SetWeaponType("projectile");
 }

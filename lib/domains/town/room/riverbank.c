@@ -9,11 +9,11 @@ protected void create() {
     SetShort("riverbank");
     SetLong("This is the bank of a narrow but swift-moving river. A steep path leads back up to the bridge. There is a cave in the steep east wall of the riverbank.");
     SetProperties (([
-                "no attack":0, 
-                "no bump":0, 
-                "no steal":0, 
-                "no magic":0, 
-                "no paralyze":0, 
+                "no attack":0,
+                "no bump":0,
+                "no steal":0,
+                "no magic":0,
+                "no paralyze":0,
                 "no teleport":0]));
     SetListen(([
                 ({ "river", "water" }) : "You hear it rushing by.",
@@ -31,6 +31,7 @@ protected void create() {
     SetChance(90);
     SetFish( ([
                 "/domains/town/meals/shark" : 10,
+                "/domains/town/meals/herring" : 20,
                 ]) );
 }
 void init() {

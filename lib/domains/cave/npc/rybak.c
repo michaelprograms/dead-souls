@@ -28,8 +28,8 @@ protected void create() {
                 "/domains/cave/armor/foodsmock" : "wear smock",
                 ]));
     SetMenuItems(([
-                ({ "roast beast", "beast" }) : "/domains/cave/meals/bread",
-                ({ "black bread", "bread" }) : "/domains/cave/meals/beast",
+                ({ "roast beast", "beast" }) : "/domains/cave/meals/beast",
+                ({ "black bread", "bread" }) : "/domains/cave/meals/bread",
                 ]));
     SetGender("male");
     AddCurrency("electrum", random(200));

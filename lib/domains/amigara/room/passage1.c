@@ -14,6 +14,9 @@ void create() {
                 ({ "ground", "rock", "rocks", "earth", "dirt", "stone", "stones" }) : "Rough and dirty, as one would expect from a simple underground area.",
                 ({ "wall", "walls", "rough walls", "rough and bare walls", "bare walls", "bare and rough walls" }) : "Carved roughly into the earth, this passageway has walls that expose underground rock. Clearly this area was architected with utility and expediency in mind.",
                 ]));
+    SetInventory(([
+                "/domains/amigara/obj/lamp" : 1,
+                ]));
     SetExits( ([
                 "east" : "/domains/amigara/room/passage2",
                 "west" : "/domains/amigara/room/rats.c",

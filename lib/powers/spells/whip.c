@@ -21,15 +21,19 @@ protected void create() {
             "abilities.");
 }
 
-varargs int eventCast(object who, int level, string limb, object* targs){
-    object whip;
-    object *limbs = this_player()->GetWieldingLimbs();
+varargs int CanCast(object who, int level, string limb, object array targets){
     object *whips = filter(all_inventory(this_player()),
             (: base_name($1) == "/obj/whip" :) );
     if(sizeof(whips)){
         write("You already have an energy whip.");
-        return 1;
+        return 0;
     }
+    return ::CanCast(who, level, limb, targets);
+}
+
+varargs int eventCast(object who, int level, string limb, object array targs){
+    object whip;
+    object *limbs = this_player()->GetWieldingLimbs();
     whip = new("/obj/whip");
     write("You make a powerful motion with your hand and conjure "+
             "an energy whip!");

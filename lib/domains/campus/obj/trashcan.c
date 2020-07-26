@@ -7,14 +7,14 @@ protected void create() {
     base_dummy::create();
     storage::create();
     SetKeyName("trashcan");
-    SetId(({"can","container"}));
-    SetAdjectives("trash");
+    SetId(({"can","container","bin"}));
+    SetAdjectives("trash","rubbish","waste");
     SetShort("a trashcan");
     SetLong("A container for discarding waste.");
     SetMass(1500);
     SetDollarCost(15);
     SetMaxCarry(900);
-    SetInventory( ([ 
+    SetInventory( ([
                 "/domains/campus/obj/key1" : 1,
                 ]) );
     SetPreventGet("It is firmly attached to the ground.");

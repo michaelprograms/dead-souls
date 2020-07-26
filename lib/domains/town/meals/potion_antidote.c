@@ -17,7 +17,7 @@ protected void create() {
     SetMealMessages("You drink from the vial.",
             "$N drinks from a vial.");
     SetBaseCost("silver",200);
-    SetPoints( ([ "poison" : -10 ]) );
+    SetPoints( ([ "poison" : -20 ]) );
     SetEmptyName("vial");
     SetEmptyShort("an empty vial");
     SetEmptyLong("This empty vial once contained some liquid.");

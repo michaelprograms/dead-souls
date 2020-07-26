@@ -744,8 +744,14 @@ int eventCheckProtection(object agent, int type, int damage){
                 RemoveMagicProtection(i);
                 continue;
             }
-            else x = evaluate(Protection[i]->hit, this_object(),
-                    agent, x, Protection[i]);
+            else {
+                if(Protection &&
+                        Protection[i] &&
+                        Protection[i]->hit){
+                    x = evaluate(Protection[i]->hit, this_object(),
+                            agent, x, Protection[i]);
+                }
+            }
         }
         damage -= x;
         if( damage < 1 ) return 0;

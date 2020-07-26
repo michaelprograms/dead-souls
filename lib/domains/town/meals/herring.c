@@ -12,9 +12,9 @@ protected void create() {
     SetShort("a red herring");
     SetLong("It is saltwater fish, and red in color.");
     SetMealType(MEAL_FOOD);
-    SetMass(10); 
-    SetStrength(10); 
-    SetBaseCost("silver", 2);
+    SetMass(10);
+    SetStrength(10);
+    SetBaseCost("silver", 1);
     SetFight(4);
     SetFood("/domains/town/meals/herring");
 }

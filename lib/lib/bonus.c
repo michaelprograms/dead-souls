@@ -10,6 +10,7 @@ mapping Stats = ([]);
 mapping Points = ([]);
 int Duration = 15;
 string bonusname;
+object whom;
 
 void create(){
     item::create();
@@ -23,13 +24,23 @@ void create(){
 void init(){
     item::init();
     set_heart_beat(1);
-    if(environment(this_object()) && living(environment(this_object()))) 
+    if(environment(this_object()) && living(environment(this_object())))
         SetBonuses();
 }
 
 void heart_beat(){
-    if(Duration) Duration--;
-    else eventDestruct();
+    if(Duration){
+        Duration--;
+        //tc(identify(this_object())+" Duration: "+Duration);
+    }
+    else {
+        //tc("destructing "+identify(this_object()));
+        this_object()->eventDestruct();
+    }
+    if(whom && environment() != whom){
+        //tc("No longer on "+identify(whom)+", destructing","red");
+        this_object()->eventDestruct();
+    }
 }
 
 mapping SetStats(mapping arg){
@@ -76,27 +87,31 @@ int GetBonusDuration(){
 }
 
 int SetBonuses(){
-    object env = environment();
-    if(!env || ! living(env)) return 0;
+    whom = environment();
+    //tc("setting bonuses","yellow");
+    if(!whom || ! living(whom)) return 0;
+    //tc("whom: "+identify(whom));
     if(sizeof(Stats))
         foreach(string key, int val in Stats){
-            env->AddStatBonus(key, val);
+            //tc(key + " " +val, "green");
+            whom->AddStatBonus(key, val);
         }
     if(sizeof(Skills))
         foreach(string key, int val in Skills){
-            env->AddSkillBonus(key, val);
+            whom->AddSkillBonus(key, val);
         }
     if(sizeof(Points))
         foreach(string key, int val in Points){
+            //tc(key + " " +val, "cyan");
             switch(key){
-                case "HP" : env->AddHP(val);break;
-                case "XP" : env->AddExperiencePoints(val);break;
-                case "SP" : env->AddStaminaPoints(val);break;
-                case "MP" : env->AddMagicPoints(val);break;
-                case "poison" : env->AddPoison(val);break;
-                case "caffeine" : env->AddCaffeine(val);break;
-                case "food" : env->AddFood(val);break;
-                case "drink" : env->AddDrink(val);break;
+                case "HP" : whom->AddHP(val);break;
+                case "XP" : whom->AddExperiencePoints(val);break;
+                case "SP" : whom->AddStaminaPoints(val);break;
+                case "MP" : whom->AddMagicPoints(val);break;
+                case "poison" : whom->AddPoison(val);break;
+                case "caffeine" : whom->AddCaffeine(val);break;
+                case "food" : whom->AddFood(val);break;
+                case "drink" : whom->AddDrink(val);break;
                 default : break;
             }
         }
@@ -104,22 +119,34 @@ int SetBonuses(){
 }
 
 int RemoveBonuses(){
-    object env = environment();
-    if(!env || ! living(env)) return 0;
+    if(!whom && environment()) whom = environment();
+    if(!whom || !living(whom)) return 0;
     if(sizeof(Stats))
         foreach(string key, int val in Stats){
-            env->RemoveStatBonus(key);
+            whom->RemoveStatBonus(key);
         }
     if(sizeof(Skills))
         foreach(string key, int val in Skills){
-            env->RemoveSkillBonus(key);
+            whom->RemoveSkillBonus(key);
         }
     return 1;
 }
 
+int eventMove(mixed dest){
+    int ret;
+    //tc("moving "+identify(this_object())+" from "+identify(environment()));
+    if(whom && environment() == whom){
+        //tc("removing bonuses from "+identify(whom),"white");
+        RemoveBonuses();
+        whom = 0;
+    }
+    ret = ::eventMove(dest);
+    //tc("current location: "+identify(environment()));
+    return ret;
+}
+
 int eventDestruct(){
     if(!valid_event(previous_object(), this_object())) return 0;
-    RemoveBonuses();
     this_object()->eventMove(ROOM_FURNACE);
     return ::eventDestruct();
 }

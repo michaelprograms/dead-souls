@@ -1,3 +1,12 @@
+---- 3.9 ---
+- Released 2020-04-08
+- Fixed a problem that prevented objects from being in the inventory of /realms/ objects.
+- Added a cheats book to provide a walkthrough of the basic quests.
+- Miscellaneous tidying up.
+- Fixed some bugs in bonuses when wearing off.
+- Fixed some stuff around fishing, added a bait item.
+- Added disease cure to James in the medical office in town.
+
 ---- 3.8.6 ---
 - Released 2014-11-03
 - Fixed poison never wearing off.

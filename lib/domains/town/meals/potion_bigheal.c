@@ -16,7 +16,7 @@ protected void create() {
     SetStrength(15);
     SetMealMessages("You drink a potion.",
             "$N drinks a potion.");
-    SetBaseCost("silver",5500);
+    SetBaseCost("silver",2000);
     SetPoints( ([ "HP" : 1000 ]) );
     SetVendorType(VT_MAGIC);
 }

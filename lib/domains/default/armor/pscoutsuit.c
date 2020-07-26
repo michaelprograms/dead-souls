@@ -6,7 +6,7 @@ inherit LIB_BANE;
 inherit LIB_WORN_STORAGE;
 object scoutshadow;
 int active = 1;
-int charge = 0;
+int charge = 1500;
 int maxcharge = 3000;
 int disguised = 0;
 string owner;
@@ -47,8 +47,14 @@ protected void create(){
     SetMaxCarry(500);
     SetSize(S_SOMEWHAT_LARGE);
     SetProtection(BLUNT,20);
+    SetProtection(PIERCE,20);
     SetProtection(BLADE,20);
     SetProtection(KNIFE,20);
+    SetProtection(SHOCK,20);
+    SetProtection(COLD,20);
+    SetProtection(HEAT,20);
+    SetProtection(GAS,20);
+    SetProtection(OVERPRESSURE,20);
     SetDamagePoints(100);
     SetWear((: GetSuitHelp :));
     AddItem( ({"light","status light"}), "A status light.");
@@ -237,8 +243,12 @@ void heart_beat(){
             }
         }
         else {
+            int dmg = GetDamagePoints();
             env->AddMagicPoints(-5);
             charge += 5;
+            if(dmg < 100){
+                SetDamagePoints(dmg+1);
+            }
             //env->eventPrint("adding 5. charge: "+charge+". "+
             //  (active ? "active" : "inactive"));
             if(!owner) owner = env->GetKeyName();

@@ -1,3 +1,5 @@
+chapter 2 "Orc Slayer"
+
 You should now be standing in the secret cave in the woods, having
 just completed the Cave Explorer I quest. Now things get complicated,
 because the next quest is Orc Slayer, and as a weak human there is
@@ -164,19 +166,42 @@ drop complex key
 
 Goodness gracious! That's quite a lot of good loot! A grenade?!? Well don't
 use it yet, this is exactly what we will need to solve the orc slayer
-quest. We're almost there. Now, you don't need the plastic flashlight 
-since you got a big maglite flashlight from the secret chamber downstairs.
+quest. We're almost there.  
 
-drop plastic flashlight
-4n, 1d, 2n, 2w, 1sw
 
-Ok here's where things get tricky. We'll need to sneak by a bunch of orcs,
+Now, at this point you may be carrying too much loot. You're not very big and 
+strong yet, and you can't arry all your loot and money around all the time.
+
+Let's get to the bank and deposit some of this cash.
+
+4n, 1d, 2n, 2e, 3n, 1e
+
+This is the bank. Let's start by opening a bank account:
+
+request account from zoe
+deposit all
+
+There! Now you have money stashed away in case things get tough, and now
+you can carry more stuff. Let's go sell some of the loot you picked up from the
+mansion to make more room in your inventory.
+
+1w, 3s, 1e, 1n
+
+sell plastic flashlight to otik
+
+You can now sell any of the gear you got that you don't think you need. Be careful..
+if you want to buy something back it'll cost you more than you sold it for. Capitalism!
+
+All righty, now we're ready to confront those orcs...sort of.
+
+Here's where things get tricky. We'll need to sneak by a bunch of orcs,
 but we don't want to waste stamina doing it, so we want to be efficient. We
 also want to make sure that we don't make mistakes because we'll need to
 move quickly. 
 
 First, let's get where we're going:
 
+1s, 5w, 1sw
 cloak
 1w, 1n, 1w
 
@@ -188,7 +213,7 @@ turn on maglite
 
 Now we're going to plan things out to make sure we don't make any 
 mistakes. The game has a way for you to bind keys to specific commands.
-For example type:
+ example type:
 
 alias 1 smile
 
@@ -234,25 +259,25 @@ elevator? Let's find out what's in the basement.
 
 push button
 1w
-push b button
+push b button (then wait until the elevator stops)
 1e
 
 This is Leo the archwizard. Don't worry, he's not named after anyone you
 know, he's been around a long long time. See how he's complaining he lost 
 the orcslayer? Take a look at the sword you got from the shaman.
 
-exa sword
+exa orcslayer
 
 Interesting huh? What if this is what Leo is looking for?
 
-give sword to leo
+give orcslayer to leo
 
 Ta-daa! Now you have solved the orc slayer quest, and Herkimer will
 allow you to join the mages guild:
 
 push button
 1w
-push 1 button
+push 1 button (then wait until the elevator stops)
 1e
 1s, 1e, 1s, 1w, 1s
 ask herkimer to join
@@ -261,10 +286,11 @@ ask herkimer to teach buffer
 ask herkimer to teach missile
 ask herkimer to teach meditate
 ask herkimer to teach light
+ask herkimer to teach fireball
 
 And now try out some of your new spells:
 
 cast whip
 cast buffer
 
-
+Congratulations, mage. You may now be ready for trickier tests of your mettle.

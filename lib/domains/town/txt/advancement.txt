@@ -8,7 +8,7 @@ completed enough quests.
 experience points, and with enough of them, you can advance
 to the next level. 
 
-   After level 4, you must have enough quest points, as
+   At level 9, you must have enough quest points, as
 well. Read the scroll here to see what quests are available.
 You only get points the first time you complete a quest.
 

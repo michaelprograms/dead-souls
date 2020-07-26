@@ -18,7 +18,7 @@ protected void create() {
     SetKeyName("orc");
     SetId(({"gorm","orc","shopkeep","keeper","vendor"}));
     SetAdjectives(({"adult","male","shop"}));
-    SetShort("an orc shopkeep");
+    SetShort("Gorm the orc shopkeep");
     SetLong("This is the manager of the local Post Exchange. You "
             "can sell things to him or buy things from him.");
     SetInventory(([
@@ -29,12 +29,12 @@ protected void create() {
     SetClass("fighter");
     SetGender("male");
     SetEncounter(  (: CheckOrc :) );
-    AddCurrency("copper", random(100));
+    AddCurrency("silver", random(100));
     SetVendorType(VT_ALL);
     SetAttackable(0);
     SetSkill("bargaining", 1);
     SetProperty("no bump", 1);
-    SetLocalCurrency("copper");
+    SetLocalCurrency("silver");
     SetStorageRoom("/domains/cave/room/shop2");
 }
 

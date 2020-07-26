@@ -7,8 +7,9 @@ int ReadList(){
             "\thealing, cost 200:\t\tfacilitate rapid recovery from wounds\n"
             "\tregeneration, cost 1200:\tgrow back severed limbs\n"
             "\texcision, cost 700:\t\tremove bullets\n"
-            "\tpoison antidote, cost 200:\tmitigate the effects of poisoning\n"
             "\tclaritin, cost 10:\t\talleviate cold symptoms\n"
+            "\tpoison antidote, cost 200:\tmitigate the effects of poisoning\n"
+            "\tcure light disease, cost 200:\tfix you up from most sicknesses\n"
             "\n"
             "Example: If you are badly hurt and need healing:\n\n"
             "\"buy healing slip from james\"\n"
@@ -16,8 +17,9 @@ int ReadList(){
             "If you've been poisoned: \n\n"
             "\"buy antidote from james\"\n"
             "\n"
-            "Once you have your slip, go west to see the doctor and "
-            "give the slip to him.\n"
+            "Once you have a slip, go west to see the doctor and "
+            "give the slip to him.\n\n"
+            "In the case of the antidote or disease cure, drink your vial.\n"
 
          );
     return 1;

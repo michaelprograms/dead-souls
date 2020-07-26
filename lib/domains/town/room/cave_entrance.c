@@ -17,11 +17,11 @@ void create() {
                 "north" : "/domains/town/room/cave1.c",
                 ]) );
     SetItems(([
-                ({ "writing", "writing on the wall","scrawl" }) : "A rough scrawl you can read", 
+                ({ "writing", "writing on the wall","scrawl" }) : "A rough scrawl you can read",
                 ({ "wall" }) : "A rocky surface in this cave.",
                 ]) );
-    SetRead(({ "writing", "writing on the wall" })  
-            , "Friend, dial campus lab" );
+    SetRead(({ "writing", "writing on the wall" })
+            , "Friend, dial campus lab. Read the door, too." );
     SetDoor("north", "/domains/town/doors/stone.c");
 }
 
@@ -53,7 +53,7 @@ varargs mixed eventHearTalk(object who, object target, int cls, string verb,
     object door = present("stone door",this_object());
     if(door) door = door->GetDoor();
     if(door && door->GetClosed() && lower_case(lang) == "edhellen"
-            && who->GetLanguageLevel(lang) > 50 && 
+            && who->GetLanguageLevel(lang) > 50 &&
             grepp(lower_case(msg),"friend"))
         decoded = 1;
     room::eventHearTalk(who,target,cls,verb,msg,lang);

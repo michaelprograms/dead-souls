@@ -16,8 +16,9 @@ protected void create() {
 }
 
 mixed CanOpen(object ob){
-    if(base_name(environment(ob)) == "/domains/campus/room/maintenance"){
-        return 1;
-    }
-    else return "There is no handle on this side.";
+    return ::CanOpen(ob);
+    //if(base_name(environment(ob)) == "/domains/campus/room/maintenance"){
+    //    return 1;
+    //}
+    //else return "There is no handle on this side.";
 }

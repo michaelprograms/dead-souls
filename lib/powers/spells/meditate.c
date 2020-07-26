@@ -20,6 +20,16 @@ protected void create() {
             "restore their stamina more quickly.\n\n");
 }
 
+varargs int CanCast(object who, int level, string limb, object array targets){
+    object *mojo = filter(all_inventory(this_player()),
+            (: base_name($1) == "/secure/obj/meditate_mojo" :) );
+    if(sizeof(mojo)){
+        write("You already have a meditative aura around you, restoring your stamina.");
+        return 0;
+    }
+    return ::CanCast(who, level, limb, targets);
+}
+
 int eventCast(object who, int level) {
     int wis, skill, stamina_level;
     object mojo = new("/secure/obj/meditate_mojo");

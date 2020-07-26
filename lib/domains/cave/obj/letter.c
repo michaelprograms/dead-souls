@@ -23,7 +23,7 @@ string ReadFun(){
         "chains that none can break. Yet duty holds me fast, and I pray "+
         "that what we do here, and what we may yet do if reinforcements "+
         "arrive in time, will stop this horrendous plague that threatens "+
-        "our beau-\n\nThey are here! I hear them outside my door! Kasatka, "+
+        "our beau-\n\nI think I hear something. They may be here. Kasatka, "+
         "if these lines fall under your eye, and I am no more, know th";
     return ret;
 }

@@ -25,11 +25,11 @@ protected void create() {
 
 int read_sign(){
     write("HOW TO CONDUCT BUSINESS HERE\n");
-    write("list : Get a list of all the items Otik has for sale");
-    write("appraise <item> : Ask Otik to tell you how much he would pay you for your item");
-    write("price <item> : Ask Otik the price of his item");
-    write("show <item> : Ask Otik for a closer look at his item\n");
-    write("\nbuy <item> from otik\nsell <item> to otik\n");
+    write("list : Get a list of all the items Gorm has for sale");
+    write("appraise <item> : Ask Gorm to tell you how much he would pay you for your item");
+    write("price <item> : Ask Gorm the price of his item");
+    write("show <item> : Ask Gorm for a closer look at his item\n");
+    write("\nbuy <item> from gorm\nsell <item> to gorm\n");
     write("Cash only!");
     return 1;
 }

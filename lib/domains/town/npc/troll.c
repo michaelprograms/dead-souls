@@ -17,7 +17,7 @@ int CheckHuman(mixed val){
     if(!objectp(val)) return 0;
     gdude = val;
     if(val->GetRace() != "human") return 0;
-    else { 
+    else {
         call_out( (: nasty, gdude :) , 2);
     }
     return 1;
@@ -43,6 +43,9 @@ protected void create() {
     SetStat("coordination",50,1);
     SetStat("speed",50,1);
     AddCurrency("silver",221+random(157));
+    SetInventory( ([
+        "/domains/town/obj/bait_can" : 1,
+        ]) );
 }
 void init(){
     ::init();

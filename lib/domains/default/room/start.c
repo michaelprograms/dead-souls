@@ -30,6 +30,9 @@ void create() {
                 //"tutorial" : "/domains/tutorial/room/start",
                 "town" : "/domains/town/room/start",
                 ]) );
+    SetInventory(([
+                "/domains/default/obj/cheatbook" : 1
+                ]) );
     if(tutorial){
         AddEnter("tutorial", "/domains/tutorial/room/start");
     }

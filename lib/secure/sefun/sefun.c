@@ -497,15 +497,12 @@ int valid_event(object dester, object dested){
     string contextdester, contextdested;
     int i;
     if(!dester || !dested) return 0;
+    return 1;
     desterbase = base_name(dester);
     destedbase = base_name(dested);
     i = sscanf(desterbase,"/%s/%s/%*s", topdester, contextdester);
-    //tc("dester i: "+i);
-    //i = sscanf(desterbase,"/%s/%*s", topdester);
-    //tc("dester: "+identify(dester));
     if(topdester != "realms" && topdester != "open") return 1;
     i = sscanf(destedbase,"/%s/%s/%*s", topdested, contextdested);
-    //tc("dested i: "+i);
     if(contextdested && contextdester && contextdested == contextdester){
         return 1;
     }

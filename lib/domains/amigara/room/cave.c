@@ -6,7 +6,7 @@ inherit LIB_ROOM;
 inherit LIB_CLIMB;
 
 int DownClimb(){
-    tc("hit DownClimb");
+    //tc("hit DownClimb");
     eventClimb(this_player(),CLIMB_DOWN,"/domains/amigara/room/passage1");
 }
 

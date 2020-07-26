@@ -19,7 +19,8 @@ protected void create() {
                 "down the bridge to get to the riverbank "
                 "below.",
                 "town" : "A small town lies east of here.",
-                ({"writing","scrawl","grafitti","grafitto"}):
+                ({"writing","scrawl","grafitti","grafitto", "writing on bridge",
+                 "peculiar writing", "peculiar writing on bridge"}):
                 "Grafitti is written here, in an odd and "
                 "uncertain hand, as if unused to the effort "
                 "of writing.",
@@ -32,7 +33,9 @@ protected void create() {
                 "west" : "/domains/town/room/forest_path1",
                 "down" : "/domains/town/room/riverbank",
                 ]) );
-    SetRead(({"writing","scrawl","grafitti","grafitto"}),"HVMANES EVNT DOMVS");
+    SetRead(({"writing","scrawl","grafitti","grafitto","writing on bridge",
+                "peculiar writing on bridge"}),
+            "HVMANES EVNT DOMVS");
     AddItem(new("/domains/town/obj/lamp"));
 }
 void init(){

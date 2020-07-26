@@ -32,6 +32,7 @@ protected void create() {
     SetInventory(([
                 "/domains/town/obj/bin" : 1,
                 "/domains/town/obj/table" : 1,
+                "/domains/town/obj/shelf" : 1,
                 "/domains/town/npc/dirk" : ({60, 1})
                 ]));
     SetRead( ([
@@ -42,7 +43,7 @@ protected void create() {
     SetProperty("no attack", 1);
     ob = new(LIB_BOARD);
     ob->SetKeyName("chalkboard");
-    ob->SetId( ({ "board", "chalkboard", "dusty board", "dusty chalkboard" }) );    
+    ob->SetId( ({ "board", "chalkboard", "dusty board", "dusty chalkboard" }) );
     ob->set_board_id("adv_guild_board");
     ob->set_max_posts(30);
     ob->SetShort("a dusty chalkboard");

@@ -79,8 +79,12 @@ void heart_beat(){
                 (1 + random(5));
         }
         /* Give extra weight to fishing skill */
-        if( chance )
+        if( chance ){
+            if(!sizeof(who->GetSkill( "fishing" ))){
+                who->AddSkill("fishing", 2, 1);
+            }
             chance = random(chance/2 + who->GetSkillLevel("fishing")/2);
+        }
         y = 0;
         foreach(fish, x in Fish) y += x;
         y = random(y);

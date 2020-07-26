@@ -5,14 +5,14 @@
 
 #include <daemons.h>
 
-string mud_name(){ 
+string mud_name(){
     string ret;
-    if(uptime() < 60) return MUD_NAME; 
+    if(uptime() < 60) return MUD_NAME;
     if(!(ret = MASTER_D->GetMudName())) return MUD_NAME;
     return ret;
 }
 
-varargs string imc2_mud_name(string name){ 
+varargs string imc2_mud_name(string name){
     string mudname;
 
     if(name) mudname = name;
@@ -41,7 +41,7 @@ string architecture() { return __ARCH__; }
 
 string mudlib() { return "Dead Souls"; }
 
-string mudlib_version() { return "3.8.6"; }
+string mudlib_version() { return "3.9"; }
 
 int query_host_port() { return __PORT__; }
 

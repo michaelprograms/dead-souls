@@ -23,6 +23,21 @@ int FlatterResponse(mixed args...){
     return 1;
 }
 
+string LongDesc(mixed args){
+    string str = "";
+    object looker = this_player();
+    str = "With eyes that could steal a sailor from the sea, Brandy "+
+        "works in this harbor town laying whiskey down, fetching round "+
+        "after round for her fiercely loyal clientele.";
+    if(member_array(looker->GetKeyName(), flatterers) != -1){
+        str += " You are allowed to ask her for her special menu: ask brandy for special menu";
+    }
+    else {
+        str += " Word is that she's receptive to flattery.";
+    }
+    return str;
+}
+
 protected void create() {
     barkeep::create();
     flatterers = ({});
@@ -33,10 +48,7 @@ protected void create() {
     SetId( ({ "brandy", "barmaid", "barkeep", "bartender", "keeper", "girl", "wench", "maid" }) );
     SetShort("Brandy the barmaid");
     SetLevel(1);
-    SetLong("With eyes that could steal a sailor from the sea, Brandy "
-            "works in this harbor town laying whiskey down, fetching round "
-            "after round for her fiercely loyal clientele. Word is she's receptive "
-            "to flattery.");
+    SetLong( (: LongDesc :) );
     SetMenuItems(([
                 ({ "guinness","beer","stein" }) : "/domains/town/meals/stein",
                 ({ "wine","bottle of wine" }) : "/domains/town/meals/winebottle",
@@ -49,7 +61,7 @@ protected void create() {
                 //"somnitol" : "/domains/town/meals/potion_healing",
                 //"phoqitol" : "/domains/town/meals/potion_healing",
                 //"comatol" : "/domains/town/meals/potion_healing",
-                "red spice" : "/domains/town/meals/red_spice",
+                "yellow spice" : "/domains/town/meals/yellow_spice",
                 "green spice" : "/domains/town/meals/green_spice",
                 "blue spice" : "/domains/town/meals/blue_spice",
                 "eve tonic" : "/domains/town/meals/mana_tonic",

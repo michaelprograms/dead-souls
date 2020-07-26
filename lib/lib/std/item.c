@@ -49,7 +49,7 @@ string GetExternalDesc(object who){
         desc += tmp + "\n";
     }
     if( GetBroken() ){
-        desc += "It appears to be broken.";
+        desc += "\nIt appears to be broken.";
     }
     else if( tmp = GetItemCondition() ){
         desc += tmp;

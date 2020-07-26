@@ -17,11 +17,11 @@ protected void create() {
     SetBaseCost("gold",10);
     SetStrength(1);
     SetMealType(MEAL_FOOD);
-    SetMealMessages("You eat a stick of blue spice.",
+    SetMealMessages("You eat a stick of blue spice. Your magic powers seem slightly improved.",
             "$N eats a stick of blue spice.");
-    SetDuration(30);
-    SetStats( ([ "durability" : 1 ]) );
-    SetPoints( ([ "HP" : 450 ]) );
+    SetDuration(300);
+    SetStats( ([ "intelligence" : 2 ]) );
+    SetPoints( ([ "MP" : 150 ]) );
     SetVendorType(VT_MAGIC);
 }
 

@@ -8,13 +8,13 @@ void create(){
     SetId( ({"thing","item","thang","dingus"}) );
     SetAdjectives( ({"generic","sample","template"}) );
     SetShort("a tall lamp");
-    SetLong("This is a tall lamp embedded into the floor, designed to provide light.");
+    SetLong("This is a lamp embedded into the floor, designed to provide light.");
     SetPreventGet("The lamp is embedded into the floor.");
     SetMass(20);
     SetBaseCost("silver",10);
     SetVendorType(VT_TREASURE);
     SetRadiantLight(25);
-    SetFuelAmount(200);
+    SetFuelAmount(5000);
 }
 
 void init(){
