@@ -33,7 +33,7 @@ protected void create() {
             "a glowing shield around the LIVing object named.\n\n");
 }
 
-varargs int CanCast(object who, int level, string limb, object array targets){
+varargs int CanCast(object who, int level, string limb, object *targets){
     class MagicProtection *Protections;
     object target = targets[0];
 
@@ -57,7 +57,7 @@ varargs int CanCast(object who, int level, string limb, object array targets){
 }
 
 
-int eventCast(object who, int level, string race, object array targets) {
+int eventCast(object who, int level, string race, object *targets) {
     class MagicProtection protection;
     object target = targets[0];
     int prot_level, skill, wis, maxprot;
