@@ -19,7 +19,7 @@ protected void create() {
             "Surrounds you with radiating light to see in the dark.");
 }
 
-varargs int CanCast(object who, int level, string limb, object array targets){
+varargs int CanCast(object who, int level, string limb, object *targets){
     object *lights = filter(all_inventory(this_player()),
             (: base_name($1) == "/obj/light" :) );
     if(sizeof(lights)){

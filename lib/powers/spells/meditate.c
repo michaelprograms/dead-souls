@@ -20,7 +20,7 @@ protected void create() {
             "restore their stamina more quickly.\n\n");
 }
 
-varargs int CanCast(object who, int level, string limb, object array targets){
+varargs int CanCast(object who, int level, string limb, object *targets){
     object *mojo = filter(all_inventory(this_player()),
             (: base_name($1) == "/secure/obj/meditate_mojo" :) );
     if(sizeof(mojo)){

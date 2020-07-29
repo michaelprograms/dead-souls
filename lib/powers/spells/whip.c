@@ -21,7 +21,7 @@ protected void create() {
             "abilities.");
 }
 
-varargs int CanCast(object who, int level, string limb, object array targets){
+varargs int CanCast(object who, int level, string limb, object *targets){
     object *whips = filter(all_inventory(this_player()),
             (: base_name($1) == "/obj/whip" :) );
     if(sizeof(whips)){
@@ -31,7 +31,7 @@ varargs int CanCast(object who, int level, string limb, object array targets){
     return ::CanCast(who, level, limb, targets);
 }
 
-varargs int eventCast(object who, int level, string limb, object array targs){
+varargs int eventCast(object who, int level, string limb, object *targs){
     object whip;
     object *limbs = this_player()->GetWieldingLimbs();
     whip = new("/obj/whip");
